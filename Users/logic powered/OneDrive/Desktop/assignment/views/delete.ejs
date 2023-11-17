@@ -1,0 +1,14 @@
+<!-- views/pages/delete.ejs -->
+
+<%- include('./partials/header') %>
+
+<div class="container">
+  <h2>Delete Confirmation</h2>
+  <p>Are you sure you want to delete the item with title: <strong><%= data.title %></strong>?</p>
+  <form action="/delete/<%= data._id %>" method="post">
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="/list" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+
+<%- include('./partials/footer') %>

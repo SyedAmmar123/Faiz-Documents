@@ -1,0 +1,20 @@
+<!-- views/pages/list.ejs -->
+
+<%- include('./partials/header') %>
+
+<div class="container">
+  <h2>List Page</h2>
+  <a href="/create" class="btn btn-primary">Add</a>
+  <ul class="list-group">
+    <% data.forEach(item => { %>
+      <li class="list-group-item">
+        <strong><%= item.title %></strong>
+        <p><%= item.description %></p>
+        <a href="/edit/<%= item._id %>" class="btn btn-primary">Edit</a>
+        <a href="/delete/<%= item._id %>" class="btn btn-danger">Delete</a>
+      </li>
+    <% }); %>
+  </ul>
+</div>
+
+<%- include('./partials/footer') %>
